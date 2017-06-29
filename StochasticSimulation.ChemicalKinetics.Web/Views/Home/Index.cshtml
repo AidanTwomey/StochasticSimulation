@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@model StochasticSimulation.ChemicalKinetics.Web.Models.SimulationModel
+
+<style>
+    .multiline 
+    {
+        white-space: pre-line
+    }
+</style>
+
+<div class="jumbotron">
+    <h1>Aidan's Simulation Algorithm</h1>
+</div>
+
+<div class="row">
+    
+    <div class="form-group">
+        
+        @using (Html.BeginForm("CallSSA", "Home", FormMethod.Post))
+        {
+            <div class="col-md-4">
+                <h2>Chemical Reactions</h2>
+                <p>A + A --> 0</p>
+                <p>A + B --> 0</p>
+                <p>0 --> A</p>
+                <p>0 --> B</p>
+            </div>
+            <div class="col-md-4">
+                @Html.Label("num points")
+                @Html.TextBoxFor(model => model.NumPoints)
+            </div>
+            <div class="col-md-4">
+                @Html.Label("timelimit")
+                @Html.TextBoxFor(model => model.TimeLimit)
+            </div>
+            
+            <button type="submit">Go!</button>
+        }
+    </div>
+    <hr/>
+    @RenderPage("~/Views/Shared/_Results.cshtml")   
+   
+</div>
