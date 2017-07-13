@@ -1,0 +1,16 @@
+version: 1.0.{build}
+environment:
+  deploy_account_key_secret:
+    secure: TT27pcULTwrBGqM4TQJMet1UIGAsKg/WngbZ1VhxkUyz9LQu/zI4z6UNQswHjZE3
+before_build:
+- ps: nuget restore
+build:
+  publish_wap: true
+  verbosity: minimal
+deploy:
+- provider: WebDeploy
+  server: https://54.246.131.74:8172/msdeploy.axd
+  website: ssalgorithms
+  username: Administrator
+  password:
+    secure: nzAtQtv7PdjVImpJCemZ6yOfPOHcb6ScGmCbryQk0ATkzCTAhSZ47BYP+mYW4JBh
