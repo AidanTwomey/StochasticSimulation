@@ -1,0 +1,19 @@
+version: 1.0.{build}
+environment:
+  deploy_account_key_secret:
+    secure: TT27pcULTwrBGqM4TQJMet1UIGAsKg/WngbZ1VhxkUyz9LQu/zI4z6UNQswHjZE3
+before_build:
+- ps: nuget restore
+build:
+  publish_wap: true
+  verbosity: minimal
+deploy:
+  provider: S3
+  access_key_id:AKIAIYG6YT3U6WWX4T2A
+  secret_access_key:%deploy_account_key_secret%
+  bucket:ssa_web_deploy
+  region: eu-west-1
+  unzip: true
+  set_public: false
+  folder:
+  artifact:StochasticSimulation.ChemicalKinetics.Web.zip
