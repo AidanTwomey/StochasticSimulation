@@ -8,12 +8,10 @@ build:
   publish_wap: true
   verbosity: minimal
 deploy:
-  provider: S3
-  access_key_id:AKIAIYG6YT3U6WWX4T2A
-  secret_access_key:'%deploy_account_key_secret%'
-  bucket:ssa_web_deploy
+- provider: S3
+  access_key_id: AKIAIYG6YT3U6WWX4T2A
+  secret_access_key:
+    secure: 3IJqfSfdpO09A+w7cJ8CgCUt9GnWk3Hia1+mlkkk+TM=
   region: eu-west-1
-  unzip: true
-  set_public: false
-  folder:
-  artifact:StochasticSimulation.ChemicalKinetics.Web.zip
+  bucket: ssa_web_deploy
+  artifact: StochasticSimulation.ChemicalKinetics.Web.zip
