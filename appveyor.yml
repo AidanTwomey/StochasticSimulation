@@ -10,7 +10,7 @@ build:
 deploy:
   provider: S3
   access_key_id:AKIAIYG6YT3U6WWX4T2A
-  secret_access_key:%deploy_account_key_secret%
+  secret_access_key:'%deploy_account_key_secret%'
   bucket:ssa_web_deploy
   region: eu-west-1
   unzip: true
