@@ -10,6 +10,7 @@ namespace StochasticSimulation.ChemicalKinetics.Web.Models
         public int NumPaths { get; set; }
         public double TimeLimit { get; set; }
         public int NumPoints { get; set; }
+        public string Algorithm { get; set; }
 
         public string Results { get; set; }
     }

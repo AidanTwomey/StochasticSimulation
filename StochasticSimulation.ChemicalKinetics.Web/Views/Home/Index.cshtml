@@ -37,7 +37,11 @@
                 @Html.Label("timelimit")
                 @Html.TextBoxFor(model => model.TimeLimit)
             </div>
-            
+            <div class="col-md-4">
+                @Html.Label("algorithm")
+                @Html.TextBoxFor(model => model.Algorithm)
+            </div>
+
             <button type="submit">Go!</button>
         }
     </div>
