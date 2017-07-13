@@ -8,10 +8,9 @@ build:
   publish_wap: true
   verbosity: minimal
 deploy:
-- provider: S3
-  access_key_id: AKIAIYG6YT3U6WWX4T2A
-  secret_access_key:
-    secure: 3IJqfSfdpO09A+w7cJ8CgCUt9GnWk3Hia1+mlkkk+TM=
-  region: eu-west-1
-  bucket: ssawebdeploy
-  artifact: StochasticSimulation.ChemicalKinetics.Web.zip
+- provider: WebDeploy
+  server: https://54.246.131.74:8172/msdeploy.axd
+  website: ssalgorithms
+  username: Administrator
+  password:
+    secure: OZSXDFVSdu2mQG2y3+blIw==
